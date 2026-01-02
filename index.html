@@ -1,69 +1,175 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jona x Javier Milei</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-image: linear-gradient(to bottom, #f0f0f0, #ccc);
-    }
-    .container {
-      width: 80%;
-      margin: 40px auto;
-      text-align: center;
-      background-color: #fff;
-      padding: 20px;
-      border: 1px solid #ddd;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .titulo {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #337ab7;
-    }
-    .parrafo {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-    .banner {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-    }
-    .final {
-      font-size: 24px;
-      font-weight: bold;
-      margin-top: 20px;
-      color: #337ab7;
-    }
-    .imagen {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin: 20px auto;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Playlist</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Menú hamburguesa en la esquina superior derecha */
+        .hamburger-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger-menu div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            border-radius: 2px;
+        }
+
+        /* Contenedor de Información */
+        .info-container {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            padding: 15px;
+            width: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-text {
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        /* Botón azul de selección de archivo */
+        input[type="file"] {
+            margin-top: 20px;
+            background: linear-gradient(45deg, #007bff, #00bcd4);
+            padding: 15px 25px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input[type="file"]::-webkit-file-upload-button {
+            display: none;
+        }
+
+        input[type="file"]:hover {
+            background: linear-gradient(45deg, #00bcd4, #007bff);
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        input[type="file"]:active {
+            background: linear-gradient(45deg, #005c99, #0097b2);
+            transform: scale(1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #playlist {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            width: 80%;
+        }
+
+        .playlist-item {
+            padding: 8px;
+            background-color: #333;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid #555;
+            transition: 0.3s ease-in-out;
+        }
+
+        .playlist-item:hover {
+            background-color: #007bff;
+            color: white;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1 class="titulo">El libertario Javier Milei</h1>
-    <img src="milei.jpg" alt="Javier Milei" class="imagen">
-    <p class="parrafo">En los últimos días, Javier Milei ha sido objeto de críticas y ataques debido a su relación con la criptomoneda. Sin embargo, es importante recordar que la corrupción y la malversación de fondos públicos son problemas estructurales y crónicos en la Argentina, que no se limitan a un solo político o administración.</p>
-    <p class="parrafo">Es importante destacar que las personas que compraron criptomoneda lo hicieron bajo su propio riesgo. La criptomoneda es un activo volátil y especulativo, y su valor puede fluctuar rápidamente. Es responsabilidad de cada inversor hacer su propia investigación y tomar decisiones informadas.</p>
-    <p class="parrafo">En cuanto a Javier Milei, es importante recordar que no ha sido condenado por ningún delito relacionado con la criptomoneda. Es importante no juzgar a las personas sin tener todos los hechos y sin haber seguido el debido proceso.</p>
-    <p class="parrafo">En resumen, no se llora en el casino. Si se decide invertir en criptomoneda, se debe estar preparado para asumir los riesgos. Y en cuanto a Javier Milei, es importante no juzgarlo sin tener todos los hechos.</p>
-    <p class="final">VIVA LA LIBERTAD</p>
-  </div>
-  <div class="banner">
-    <p>&copy; 2025 Derechos reservados por Jona. Prohibida la reproducción total o parcial de este contenido sin autorización previa.</p>
-  </div>
+    <h1>Playlist-Dev</h1>
+    <!-- Botón azul para seleccionar archivos -->
+    <input type="file" id="fileInput" multiple accept="audio/mp3,video/mp4">
+    <ul id="playlist"></ul>
+    <audio id="audioPlayer" controls></audio>
+
+    <!-- Menú Hamburguesa -->
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Contenedor de Información -->
+    <div id="info" class="info-container">
+        <p class="info-text">Desarrollador: Alonso Fredy Jonás</p>
+    </div>
+
+    <script>
+        const infoMenu = document.getElementById('info');
+        const fileInput = document.getElementById('fileInput');
+        const playlist = document.getElementById('playlist');
+        const audioPlayer = document.getElementById('audioPlayer');
+        let playlistArray = [];
+
+        function toggleMenu() {
+            // Alternar la visibilidad del menú
+            infoMenu.style.display = infoMenu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        fileInput.addEventListener('change', (e) => {
+            const files = Array.from(e.target.files);
+            files.forEach((file, index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = file.name;
+                listItem.classList.add('playlist-item');
+                listItem.addEventListener('click', () => {
+                    playFile(file);
+                });
+                playlistArray.push(file);
+                playlist.appendChild(listItem);
+            });
+        });
+
+        function playFile(file) {
+            const fileUrl = URL.createObjectURL(file);
+            audioPlayer.src = fileUrl;
+            audioPlayer.play();
+        }
+    </script>
 </body>
 </html>
